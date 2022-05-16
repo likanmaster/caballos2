@@ -19,18 +19,17 @@ Primero abrir la terminal de Linux
 Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
 
     git clone https://github.com/likanmaster/caballos2.git
+Para poder clonar el repositorio luego de ejecutar el comando anterior, se solicitara el nombre de usuario y contraseña (en caso de que el repositorio este privado) que deben ser ingresados por la persona que esta ejecutando el algoritmo
 
-    Para poder clonar el repositorio luego de ejecutar el comando anterior, se solicitara el nombre de usuario y contraseña (en caso de que el repositorio este privado) que deben ser ingresados por la persona que esta ejecutando el algoritmo
-
-    El siguiente paso es acceder a la carpeta del repositorio local que se creo inicialmente, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame caballos se de usar el comando de la siguiente forma:
+El siguiente paso es acceder a la carpeta del repositorio local que se creo inicialmente, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame caballos se de usar el comando de la siguiente forma:
 
     cd caballos/src/caballos2
 
-    Luego primero se debe compilar el programa con la siguiente instrucción
+ Luego primero se debe compilar el programa con la siguiente instrucción
 
     gcc -o carrera carrera.c -lpthread -lncurses -DMUTEX
 
-    Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada cantidad de caballos y lago del hipodromo como por ejemplo:
+ Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada cantidad de caballos y lago del hipodromo como por ejemplo:
 
     /.carrera
 
