@@ -21,9 +21,9 @@ int main(){
         for (int i = 0; i < c; i++) {
                 if (flag==0) {
                     if (posicion[i]>meta) {
-                      printf(" primer caballo en llegar a la meta "+(i+1)+"\n");
+                      printf(" primer caballo en llegar a la meta ", (i+1), "\n");
                       flag=1;
-                    }else  posicion=modpos(posicion, meta);
+                    }else  posicion = modpos(posicion, meta);
                 }//fin if de flag
             }//fin if de turnos    
     }
@@ -55,12 +55,12 @@ void dibujarmatriz(int[] posicion, int[][] hipodromo, int meta){
             hipodromo[i][0]=0;//con esto limpiamos la matriz original
             if (meta==j) {
                 hipodromo[i][j]=1;//agregamos la meta
-                System.out.print("1");// last update
+                printf("1");// last update
             }
             if (posicion[i]==j) {
-                    System.out.print("☻ ");//situamos el caballo
-            } else  System.out.print(" ");//mostramos lo que hay en la posicion         
+                    printf("☻ ");//situamos el caballo
+            } else  printf(" ");//mostramos lo que hay en la posicion         
         }
-    System.out.println(" ");
+    printf("\n");
     }       
 }   
