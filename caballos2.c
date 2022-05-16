@@ -36,7 +36,7 @@ int crearmeta(int m){
     return meta;
 }
 
-int[] modpos(int[] posicion, int meta){
+static int[] modpos(int[] posicion, int meta){
     for (int i = 0; i < posicion.length; i++) {
         double aleatorio = Math.random()*3+1;
         int r=(int) aleatorio;
