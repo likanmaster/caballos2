@@ -23,7 +23,7 @@ Para poder clonar el repositorio luego de ejecutar el comando anterior, se solic
 
 El siguiente paso es acceder a la carpeta del repositorio local que se creo inicialmente, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame caballos se de usar el comando de la siguiente forma:
 
-    cd caballos/src/caballos2
+    cd caballos2
 
  Luego primero se debe compilar el programa con la siguiente instrucción
 
