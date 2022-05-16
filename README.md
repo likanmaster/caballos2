@@ -14,10 +14,9 @@ el programa consiste en poner los caballos en el punto de partida y que estos av
 
 
 Para la ejecución del algoritmo se deben seguir los siguientes pasos:
+Primero abrir la terminal de Linux
 
-    Primero abrir la terminal de Linux
-
-    Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
+Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
 
     git clone https://github.com/likanmaster/caballos2.git
 
