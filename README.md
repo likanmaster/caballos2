@@ -6,10 +6,10 @@ variables de entrada: c=cantidad de caballos m=largo del hipodromo(se recomienda
 
 el programa consiste en poner los caballos en el punto de partida y que estos avancen en turnos  randomicos una posicion hacia adelante, el primero en pasar la meta es el ganador
 
-1           
-        2   
-            3   
-     4
+  1           
+           2   
+              3   
+       4
 
 
 Para la ejecución del algoritmo se deben seguir los siguientes pasos:
