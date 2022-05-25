@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //*************************F U N C I O N E S************************************//
 
@@ -7,17 +8,19 @@ int crearMeta(int m){
     return meta;
 }
 
-int modpos(int posicion[], int meta){
-    for (int i = 0; i < sizeof(posicion); i++) {
+int *modpos(int posicion[], int meta){
+    int cant = sizeof(posicion);
+    int *respuesta = malloc(15*sizeof(int));
+    respuesta = posicion;
+    for (int i = 0; i < cant; i++) {
         double aleatorio = rand()*3+1;
         int r=(int) aleatorio;
-            if ((posicion[i]+r) < meta) {
-                int pos = posicion[i] + r;
-                posicion[i] = pos;
-            }else posicion[i] = meta + 1;
+            if ((respuesta[i]+r) < meta) {
+                respuesta[i] = respuesta[i] + r;
+            }else respuesta[i] = meta + 1;
             
     }//fin for
-    return posicion;
+    return respuesta;
 }
 
 void dibujarmatriz(int posicion[], int meta, int d){
@@ -65,7 +68,7 @@ int main(){
                         printf(" primer caballo en llegar a la meta %i \n", num);
                         flag=1;
                     }else{ 
-                        posicion = modpos(posicion, meta);
+                        int posicion[c] = modpos(posicion, meta);
                     }
                 }//fin if de flag
             }//fin if de turnos    
