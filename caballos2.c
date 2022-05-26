@@ -10,17 +10,21 @@ int crearMeta(int m){
 
 int *modpos(int posicion[], int meta){
     int cant = sizeof(posicion);
-    int *respuesta = malloc(15*sizeof(int));
-    respuesta = posicion;
+    int *resul;
+    resul = (int*)malloc(cant * sizeof(int));
+    resul = posicion;
+    
     for (int i = 0; i < cant; i++) {
         double aleatorio = rand()*3+1;
-        int r=(int) aleatorio;
-            if ((respuesta[i]+r) < meta) {
-                respuesta[i] = respuesta[i] + r;
-            }else respuesta[i] = meta + 1;
-            
+        int r = (int)aleatorio;
+        if ((resul[i] + r) < meta) {
+            int pos = resul[i] + r;
+            resul[i] = pos;
+        }else{
+            resul[i] = meta + 1;
+        }
     }//fin for
-    return respuesta;
+    return resul;
 }
 
 void dibujarmatriz(int posicion[], int meta, int d){
@@ -29,7 +33,7 @@ void dibujarmatriz(int posicion[], int meta, int d){
     for (int i = 0; i < c; i++) {
         for (int j = 0; j < d; j++) {
             hipodromo[i][0] = 0;//con esto limpiamos la matriz original
-            if (meta==j) {
+            if (meta == j) {
                 hipodromo[i][j]=1;//agregamos la meta
                 printf("1");// last update
             }
@@ -50,31 +54,28 @@ int main(){
     printf("\n");
 
     //int hipodromo[c][d];
-    int posicion[c];
+    //int posicion[c];
+    int *pos = malloc(c * sizeof(int));
     int flag=0;
     int  meta = crearMeta(d);
     printf("☻=Caballo  0=pocicion vacia  1=Meta\n");
 
-    for (int i = 0; i < sizeof(posicion); i++) {
-        posicion[i]=0;
+    for (int i = 0; i < c; i++) {
+        pos[i] = 0;
     }
 
     while(flag==0){
-        dibujarmatriz(posicion,meta,d);
+        dibujarmatriz(pos,meta,d);
         for (int i = 0; i < c; i++) {
-                if (flag==0) {
-                    if (posicion[i]>meta) {
-                        int num = i + 1;
-                        printf(" primer caballo en llegar a la meta %i \n", num);
-                        flag=1;
-                    }else{ 
-                        int posicion[c] = modpos(posicion, meta);
-                    }
-                }//fin if de flag
-            }//fin if de turnos    
+            if (flag == 0) {
+                if (pos[i] > meta) {
+                    int num = i + 1;
+                    printf(" primer caballo en llegar a la meta %i \n", num);
+                    flag=1;
+                }else{ 
+                    pos = modpos(pos, meta);
+                }
+            }//fin if de flag
+        }//fin if de turnos    
     }
 }
-
-
-
-
