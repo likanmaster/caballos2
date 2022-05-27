@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 //*************************F U N C I O N E S************************************//
 
@@ -8,7 +9,7 @@ int crearMeta(int m){
     return meta;
 }
 
-int *modpos(int posicion[], int meta){
+int *modpos(int *posicion, int meta){
     int cant;
     cant = (int)sizeof(posicion);
     int *resul;
@@ -28,7 +29,7 @@ int *modpos(int posicion[], int meta){
     return resul;
 }
 
-void dibujarmatriz(int posicion[], int meta, int d){
+void dibujarmatriz(int *posicion, int meta, int d){
     int c = (int)sizeof(posicion);
     int hipodromo[c][d];
     int i, j;
