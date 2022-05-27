@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
 
 //*************************F U N C I O N E S************************************//
 
@@ -51,6 +52,10 @@ void dibujarmatriz(int *posicion, int meta, int d){
 //*************************F I N  D E  F U N C I O N E S************************************//
 
 int main(){
+    clock_t tiempo_inicio, tiempo_final;
+    double segundos;
+
+    tiempo_inicio = clock();
     int c, d, i;//declaracion de variables c: Caballos, d: Distancia. 
     printf("Ingrese la cantidad de caballos y la distancia: ");
     scanf("%i %i", &c, &d);
@@ -82,4 +87,10 @@ int main(){
             }//fin if de flag
         }//fin if de turnos    
     }
+
+    tiempo_final = clock();
+
+    segundos = (double)(tiempo_final - tiempo_inicio) / CLOCKS_PER_SEC;
+
+    printf("Tiempo de ejecución: %f segundos \n",segundos); 
 }
