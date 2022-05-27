@@ -67,6 +67,7 @@ int main(){
     }
 
     while(flag==0){
+        usleep(2000000);
         dibujarmatriz(pos,meta,d);
         for (i = 0; i < c; i++) {
             if (flag == 0) {
