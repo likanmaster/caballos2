@@ -9,12 +9,13 @@ int crearMeta(int m){
 }
 
 int *modpos(int posicion[], int meta){
-    int cant = sizeof(posicion);
+    int cant;
+    cant = (int)sizeof(posicion);
     int *resul;
     resul = (int*)malloc(cant * sizeof(int));
     resul = posicion;
-    
-    for (int i = 0; i < cant; i++) {
+    int i;
+    for (i = 0; i < cant; i++) {
         double aleatorio = rand()*3+1;
         int r = (int)aleatorio;
         if ((resul[i] + r) < meta) {
@@ -28,10 +29,11 @@ int *modpos(int posicion[], int meta){
 }
 
 void dibujarmatriz(int posicion[], int meta, int d){
-    int c = sizeof(posicion);
+    int c = (int)sizeof(posicion);
     int hipodromo[c][d];
-    for (int i = 0; i < c; i++) {
-        for (int j = 0; j < d; j++) {
+    int i, j;
+    for (i = 0; i < c; i++) {
+        for (j = 0; j < d; j++) {
             hipodromo[i][0] = 0;//con esto limpiamos la matriz original
             if (meta == j) {
                 hipodromo[i][j]=1;//agregamos la meta
@@ -48,7 +50,7 @@ void dibujarmatriz(int posicion[], int meta, int d){
 //*************************F I N  D E  F U N C I O N E S************************************//
 
 int main(){
-    int c, d;//declaracion de variables c: Caballos, d: Distancia. 
+    int c, d, i;//declaracion de variables c: Caballos, d: Distancia. 
     printf("Ingrese la cantidad de caballos y la distancia: ");
     scanf("%i %i", &c, &d);
     printf("\n");
@@ -60,13 +62,13 @@ int main(){
     int  meta = crearMeta(d);
     printf("☻=Caballo  0=pocicion vacia  1=Meta\n");
 
-    for (int i = 0; i < c; i++) {
+    for (i = 0; i < c; i++) {
         pos[i] = 0;
     }
 
     while(flag==0){
         dibujarmatriz(pos,meta,d);
-        for (int i = 0; i < c; i++) {
+        for (i = 0; i < c; i++) {
             if (flag == 0) {
                 if (pos[i] > meta) {
                     int num = i + 1;
