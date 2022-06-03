@@ -69,6 +69,7 @@ void dibujarmatriz(int *posicion, int meta, int d){
         }
     printf("\n");
     }       
+    usleep(200000);
 }   
 
 //*************************F I N  D E  F U N C I O N E S************************************//
@@ -115,9 +116,9 @@ int main(){
     	 #ifdef MUTEX
   	pthread_mutex_lock(&pantalla);	//bloquea la pantalla (seccion critica)
     #endif
-    	 limpiar_pantalla(); 
-    	 printf("%d caballos corriendo \n",c);
-       usleep(20000);
+        limpiar_pantalla(); 
+        printf("%d caballos corriendo \n",c);
+        usleep(200000);
         dibujarmatriz(pos,meta,d);
        #ifdef MUTEX
 		pthread_mutex_unlock(&pantalla);//desbloquea la pantalla (seccion critica)
