@@ -4,6 +4,7 @@
 #include <unistd.h>							        //bibliotecas de sistema Unix
 #include <stdlib.h> 							    //bibliotecas funciones estandar
 #include <ncurses.h> 						        //bibliotecas manejo de pantalla
+#include <time.h>                                   //bibliotecas del tiempo
 
 typedef struct{									    //se define una estructura para pasar los
 	int carril;										//parametros de entrada a la funcion que
@@ -20,6 +21,12 @@ void *funcionThread(parametros_t *parametro);
 
 //Main: Ejecuta threads para la funcion funcionThread
 int main(void){
+    clock_t tiempo_inicio, tiempo_final;
+    double segundos;
+    tiempo_inicio = clock();
+    int n, m;
+    printf("Ingrese la cantidad de caballos (2 a 7) y los metros (50 a 100):\n");
+    scanf("%d %d", &n, &m);
     int x=1,y=15;		    						//para posicionamiento de pantalla
     int error1,error2;		    					//para verificar error al crear el thread
     pthread_attr_t atributo1,atributo2;	            //atributos para la creacion del thread
@@ -29,7 +36,7 @@ int main(void){
     initscr();										//inicializa la pantalla para ncurses
     curs_set(0);									//elimina el cursor
     erase();										//limpia pantalla
-    refresh();										//refresca los cambion en la pantalla
+    refresh();										//refresca los cambios en la pantalla
     srand(time(NULL));						        //inicializa semilla de la funcion random
 
     #ifdef MUTEX
@@ -59,7 +66,7 @@ int main(void){
         exit (-1);
     }
 
-    while (x<40){		    										
+    while (x<m){		    										
         #ifdef MUTEX
             pthread_mutex_lock(&pantalla);	//bloquea la pantalla (seccion critica)
         #endif
@@ -75,9 +82,15 @@ int main(void){
         x++;
         //if(drand48()<0.5) x++;		    	    //avanza una posicion con probabilidad 0.5
     }
+    tiempo_final = clock();
+
+    segundos = (double)(tiempo_final - tiempo_inicio) / CLOCKS_PER_SEC;
+
+    printf("\nTiempo de ejecucion: %f segundos \n",segundos);
 
     getch(); 										//espera que se ingrese cualquier tecla para salir
     endwin();										//cierra la pantalla de ncurses
+    
 }
 
 /* Funcion que se ejecuta en el thread hijo.*/
