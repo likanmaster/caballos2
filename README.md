@@ -7,9 +7,9 @@ variables de entrada: c=cantidad de caballos m=largo del hipodromo(se recomienda
 el programa consiste en poner los caballos en el punto de partida y que estos avancen en turnos  randomicos una posicion hacia adelante, el primero en pasar la meta es el ganador
 los caballos se representan con numeros del 1 al 7 y la meta es representada con el numero 0
 
-.1......................0
-............2...........0
-.............3..........0
+.1......................0               
+............2...........0                                                               
+.............3..........0                                                                               
 ......4.................0
 
 
