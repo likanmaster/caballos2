@@ -1,10 +1,10 @@
 
 
-Simulacion de carrera de caballos creada en el lenguaje C, con una cantidad de 2 a 7  caballos
+Simulacion de carrera de caballos creada en el lenguaje C, con una cantidad de 1 a 7  caballos
 
-variables de entrada: c=cantidad de caballos m=largo del hipodromo(se recomienda un valor entero entre 40 y 100 para una correcta visualizacion)
+variables de entrada: v= cantidad de vueltas c=cantidad de caballos d=largo del hipodromo(se recomienda un valor entero entre 50 y 100 para una correcta visualizacion)
 
-el programa consiste en poner los caballos en el punto de partida y que estos avancen en turnos  randomicos una posicion hacia adelante, el primero en pasar la meta es el ganador
+el programa consiste en poner los caballos en el punto de partida y que estos avancen en turnos  randomicos una posicion hacia adelante, el primero en completar la v cantidad de vueltas y cruzar  la meta es el ganador
 los caballos se representan con numeros del 1 al 7 y la meta es representada con el numero 0
 
 .1......................0               
