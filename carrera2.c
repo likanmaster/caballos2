@@ -32,7 +32,7 @@ int main(void){
   
   printf("Ingrese la cantidad de vueltas(entre1 y 4) caballos (entre 1 y 7 ) y la distancia (entre 50 y 100): ");
   scanf("%i %i %i", &v,&c, &d);
-   if(c<1||c>7||d<50||d>100){
+    if(v<1||v>4||c<1||c>7||d<50||d>100){
        printf("Por favor verifique que los datos ingresados esten dentro de los rangos establecidos\n vueltas (entre1 y 4) caballos (entre 1 y 7 ) y  distancia (entre 50 y 100): ");
    
     scanf("%i %i %i", &v,&c, &d);
