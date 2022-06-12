@@ -28,10 +28,10 @@ El siguiente paso es acceder a la carpeta del repositorio local que se creo inic
 
 Luego primero se debe compilar el programa con la siguiente instrucción
 
-    gcc -o caballlos2 caballos2.c -lpthread -lncurses -DMUTEX
+    gcc -o caballlos2 final.c -lpthread -lncurses -DMUTEX
 
 Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada cantidad de caballos y lago del hipodromo como por ejemplo:
 
-    /.carrera
+    /.caballos2
 
 Con la realización de todos los pasos mencionados anteriormente es posbible ejecutar el programa.
